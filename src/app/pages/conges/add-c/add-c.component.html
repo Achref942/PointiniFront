@@ -1,0 +1,46 @@
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+
+                            <div class="col-8">
+                                <h3 class="mb-0">Add Conge</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button type="button" class="btn btn-primary mt-4" type="submit">Add Conge</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <h6 class="heading-small text-muted mb-4">Conge</h6>
+                        <div class="pl-lg-4">
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-username">datedeb</label>
+                                                <input type="date" class="form-control form-control-alternative" placeholder="datedeb" id="datedeb" [(ngModel)]="conge.datedeb" name="datedeb">
+                                                <label class="form-control-label" for="input-username">datefin</label>
+                                                <input type="date" class="form-control form-control-alternative" placeholder="datefin" id="datefin" [(ngModel)]="conge.datefin" name="datefin">
+                                                <label class="form-control-label" for="input-username">nbJour</label>
+                                                <input type="number" class="form-control form-control-alternative" placeholder="nbJour" id="nbJour" [(ngModel)]="conge.nbJour" name="nbJour">
+                                                <label class="form-control-label" for="input-username">duree</label>
+                                                <input type="text" class="form-control form-control-alternative" placeholder="duree" id="duree" [(ngModel)]="conge.user" name="user">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
