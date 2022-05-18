@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { User } from './../../models/users';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoginService } from 'src/app/Service/login.service';
+import Swal from "sweetalert2"
 
 
 @Component({
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  post(){
+  post() {
       this.loginServise.Post(this.user).subscribe(data=>{
         console.log("data=",data);
 
@@ -34,11 +35,28 @@ console.log("eure de conx fi9 3meeee ");
           localStorage.setItem("statu","1");
           localStorage.setItem("acteur",JSON.stringify(data));
           this.router.navigateByUrl("/dashboard");
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+          })
         }
       })
   }
   onSubmit(){
     this.post();
+
     }
 
 }

@@ -1,5 +1,4 @@
 import { PauseService } from './../../Service/pause.service';
-import { Pause } from './../../models/pause';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,12 +13,14 @@ pause:any;
   ngOnInit(): void {
 
     this.getallpauses();
+    console.log("test2",this.pause)
+  }
+  getallpauses(){
+    this.pauseService.GetAll().subscribe(data=>{this.pause=data
+    });
+    console.log("test1",this.pause)
   }
 
-  getallpauses(){
-    this.pauseService.getPauses().subscribe(data=>{this.pause=data
-    });
-  }
 
 
 }

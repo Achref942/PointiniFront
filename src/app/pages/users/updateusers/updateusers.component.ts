@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/users';
 import { UserService } from 'src/app/Service/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-updateusers',
@@ -31,5 +32,12 @@ export class UpdateusersComponent implements OnInit {
 
   goToUserList(){
     this.router.navigate(['/users/listeusers']);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: "l'utilisateur est mis à jour",
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 }

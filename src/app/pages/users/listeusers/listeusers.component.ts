@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/users';
 import { UserService } from 'src/app/Service/users.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-listeusers',
@@ -11,13 +12,30 @@ import { UserService } from 'src/app/Service/users.service';
 })
 export class ListeusersComponent implements OnInit {
 
-  users: User[];
+
+  x=localStorage.getItem("acteur");
+  z=JSON.parse(this.x).role
+  y=JSON.parse(this.x).entreprise
+  idE =this.y
+  users: any=[];
 
   constructor(private http:HttpClient,
     private userService: UserService,
     private router:Router) { }
   ngOnInit(): void {
-    this.getall();
+
+      if(this.z.libelle=="SuperAdmin")
+      {
+        console.log("test first")
+        this.getall()
+      }
+      else
+     {
+      console.log(this.idE)
+      this.userService.getByEntreprise(this.idE.id).subscribe(data=>{
+       this.users=data
+      });
+      }
   }
   getall(){
     this.userService.GetAll().subscribe(data=>{this.users=data
@@ -28,4 +46,7 @@ export class ListeusersComponent implements OnInit {
     this.router.navigate(["/users/updateusers",id]);
   }
 
+
 }
+
+

@@ -14,7 +14,7 @@ export class UserService {
     return this.http.get<User[]>(`${this.baseURL}/`);
   }
 
-  AddUser(user: User): Observable<Object> {
+  AddUser(user: any): Observable<Object> {
     return this.http.post<User>(`${this.baseURL}/`, user);
   }
 
@@ -25,4 +25,9 @@ export class UserService {
   getUserById(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseURL}/${id}`);
   }
+
+  getByEntreprise(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/findByEntreprise/${id}`);
+  }
+
 }

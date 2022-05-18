@@ -1,7 +1,9 @@
+import { first } from 'rxjs';
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { ROUTES } from '../sidebar/sidebar.component';
+import { SuperAdmin } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  name :any;
   public focus;
   public listTitles: any[];
   public location: Location;
@@ -18,7 +21,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.listTitles = SuperAdmin.filter(listTitle => listTitle);
+    this.name=JSON.parse(localStorage.getItem("acteur")).firstName
+    console.log(this.name)
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());
@@ -36,6 +41,27 @@ export class NavbarComponent implements OnInit {
   logOut(){
     localStorage.clear();
     this.router.navigateByUrl("/login");
+  }
+  OnSubmit(){
+    Swal.fire({
+      title: 'Tu es sure?',
+      text: "a déconnecter!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Logout!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Se déconnecter!',
+          'déconnexion a éte confirmée.',
+          'success'
+
+        )
+        this.logOut();
+      }
+    })
   }
 
 }

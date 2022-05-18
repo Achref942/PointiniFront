@@ -1,19 +1,22 @@
-import { Role } from './role';
+import { Entreprise } from "src/app/models/entreprise";
+import { Role } from "./role";
 import { Time } from "@angular/common";
 
 export class User {
-  public id: number;
-  public firstName: String;
-  public lastName: String;
-  public email: String;
-  public adresse: String;
-  public salaire: any;
-  public heure_deb: Time;
-  public heure_fin: Time;
-  public date_creation: Date;
-  public date_fin_contrat: Date;
-  public username: String;
-  public password: String;
-  public soldeconge: number;
-  private role: Role;
+  id: number;
+  firstName: String;
+  lastName: String;
+  email: String;
+  adresse: String;
+  salaire: any;
+  heure_deb: Time;
+  heure_fin: Time;
+  date_creation: Date;
+  date_fin_contrat: Date;
+  username: String;
+  password: String;
+  soldeconge: number;
+  role: Role;
+  entreprise: Entreprise;
+  photo:String;
 }

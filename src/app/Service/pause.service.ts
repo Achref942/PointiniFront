@@ -1,6 +1,6 @@
 import { Pause } from "./../models/pause";
 import { Observable } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -11,10 +11,10 @@ export class PauseService {
 
   constructor(private http: HttpClient) {}
 
-  getPauses():Observable<Pause[]>{
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get<Pause[]>(`${this.baseURL}/`,{headers: headers});
-  }
+  GetAll():Observable<Pause[]>{
+      return this.http.get<Pause[]>(`${this.baseURL}/`);
+    }
+
   getPauseById(id: number): Observable<Pause> {
     return this.http.get<Pause>(`${this.baseURL}/${id}`);
   }

@@ -22,7 +22,6 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">id</th>
 
                                 <th scope="col">libelle </th>
                                 <th scope="col">montant</th>
@@ -35,9 +34,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor=" let o of operations">
-                                <td>
-                                    {{o.id}}
-                                </td>
+
                                 <td>
                                     {{o.libelle}}
                                 </td>
