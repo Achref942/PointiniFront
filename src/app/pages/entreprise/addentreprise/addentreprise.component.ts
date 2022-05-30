@@ -1,7 +1,7 @@
 import { EntrepriseService } from 'src/app/Service/entreprise.service';
 import { Entreprise } from './../../../models/entreprise';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-addentreprise',
   templateUrl: './addentreprise.component.html',
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class AddentrepriseComponent implements OnInit {
 entreprise: Entreprise=new Entreprise();
   constructor(private entrepriseService:EntrepriseService,
-    private router: Router) { }
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
   }

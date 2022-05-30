@@ -11,15 +11,18 @@
             <div class="card p-3 py-4">
 
                 <div class="text-center">
-                    <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle">
+                    <br>
+                    <br>
+                    <img src="http://localhost:8080/user/files/{{y}}" width="100" class="rounded-circle">
                 </div>
 
-                <!-- <div class="text-center mt-3">
-                    <h5 class="mt-2 mb-0">Alexender Schidmt</h5>
-                    <span>UI/UX Designer</span>
+                <div class="text-center mt-3">
+                    <h5 class="mt-2 mb-0">{{name}}</h5>
+                    <span>{{name}}</span>
 
                     <div class="px-4 mt-1">
-                        <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
 
                     </div>
 
@@ -32,12 +35,16 @@
                     </ul>
 
                     <div class="buttons">
-                        <button (click)="enableDisableRule('icon')" [ngClass]="{'yellow' : toggle, 'red': !toggle}" class="buhtton btn  button3 signinbutton" style="font-size:50px ;width :200px; height:160px"><i class="fas fa-sign-in-alt" [ngClass]="toggle ? 'fa-sign-out-alt' : 'fa-sign-in-alt'" ></i></button>
+                        <button (click)="enableDisableRule('icon')" [ngClass]="{'#f56036' : toggle, '#f5385a': !toggle}" class="buhtton btn  button3 signinbutton" style="font-size:100px ;width :200px; height:160px"><i class="fas fa-sign-in-alt" [ngClass]="toggle ? 'fa-sign-in-alt' : 'fa-sign-out-alt'" ></i></button>
                         <h5>{{status}}</h5>
                     </div>
+                    <br>
 
 
-                </div> -->
+                    <strong>  <div>{{ time | date: 'HH:mm:ss' }}</div></strong>
+
+
+                </div>
 
 
 

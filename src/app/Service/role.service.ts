@@ -13,7 +13,6 @@ export class RoleService {
 
   GetAll(): Observable<Role[]> {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
-
     return this.httpClient.get<Role[]>(`${this.baseURL}/`, {
       headers: headers,
     });
@@ -28,5 +27,12 @@ export class RoleService {
 
   getroleById(id: number): Observable<Role> {
     return this.httpClient.get<Role>(`${this.baseURL}/${id}`);
+  }
+
+  findUserByRole(id: number): Observable<Role> {
+    return this.httpClient.get<Role>(`${this.baseURL}/findUserByRole/${id}`);
+  }
+  findUserByRoleEntreprise(id: number,ide:number): Observable<Role> {
+    return this.httpClient.get<Role>(`${this.baseURL}/findUserByRoleEntreprise/${id}/${ide}`);
   }
 }

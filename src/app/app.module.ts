@@ -34,6 +34,22 @@ import { AddCComponent } from "./pages/conges/add-c/add-c.component";
 import { UpdateCComponent } from "./pages/conges/update-c/update-c.component";
 import { ListeCComponent } from "./pages/conges/liste-c/liste-c.component";
 
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { AddSAComponent } from "./pages/super-admin/add-sa/add-sa.component";
+import { ListSAComponent } from "./pages/super-admin/list-sa/list-sa.component";
+import { UpdateSAComponent } from "./pages/super-admin/update-sa/update-sa.component";
+import { AddadminComponent } from './pages/admin/addadmin/addadmin.component';
+import { ListadminComponent } from './pages/admin/listadmin/listadmin.component';
+import { UpdateadminComponent } from './pages/admin/updateadmin/updateadmin.component';
+import { AddrhComponent } from './pages/rh/addrh/addrh.component';
+import { UpdaterhComponent } from './pages/rh/updaterh/updaterh.component';
+import { ListrhComponent } from './pages/rh/listrh/listrh.component';
+import { AddemployeeComponent } from './pages/employee/addemployee/addemployee.component';
+import { UpdateemployeeComponent } from './pages/employee/updateemployee/updateemployee.component';
+import { ListemployeeComponent } from './pages/employee/listemployee/listemployee.component';
+
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -44,12 +60,29 @@ import { ListeCComponent } from "./pages/conges/liste-c/liste-c.component";
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+    HomeLayoutComponent,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // users
     UpdateusersComponent,
@@ -85,6 +118,28 @@ import { ListeCComponent } from "./pages/conges/liste-c/liste-c.component";
     AddCComponent,
     UpdateCComponent,
     ListeCComponent,
+
+    //SuperAdmin
+    AddSAComponent,
+    ListSAComponent,
+    UpdateSAComponent,
+
+    //Admin
+    AddadminComponent,
+    ListadminComponent,
+    UpdateadminComponent,
+    
+    //rh
+    AddrhComponent,
+    UpdaterhComponent,
+    ListrhComponent,
+    AddemployeeComponent,
+    UpdateemployeeComponent,
+    ListemployeeComponent,
+
+
+
+
 
   ],
   providers: [],

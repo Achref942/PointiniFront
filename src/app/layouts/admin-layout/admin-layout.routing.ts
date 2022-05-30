@@ -1,4 +1,18 @@
-import { CalondarComponent } from './../../pages/calondar/calondar.component';
+import { AddemployeeComponent } from "./../../pages/employee/addemployee/addemployee.component";
+import { UpdateemployeeComponent } from "./../../pages/employee/updateemployee/updateemployee.component";
+import { ListemployeeComponent } from "./../../pages/employee/listemployee/listemployee.component";
+import { ListrhComponent } from "./../../pages/rh/listrh/listrh.component";
+import { UpdaterhComponent } from "./../../pages/rh/updaterh/updaterh.component";
+import { AddrhComponent } from "./../../pages/rh/addrh/addrh.component";
+import { ListadminComponent } from "./../../pages/admin/listadmin/listadmin.component";
+import { UpdateadminComponent } from "./../../pages/admin/updateadmin/updateadmin.component";
+import { AddadminComponent } from "./../../pages/admin/addadmin/addadmin.component";
+
+import { RHComponent } from "./../../pages/rh/rh.component";
+import { EmployeeComponent } from "./../../pages/employee/employee.component";
+import { AdminComponent } from "./../../pages/admin/admin.component";
+import { SuperAdminComponent } from "./../../pages/super-admin/super-admin.component";
+import { CalondarComponent } from "./../../pages/calondar/calondar.component";
 import { DemmandecongeComponent } from "./../../pages/demmandeconge/demmandeconge.component";
 import { ListeCComponent } from "./../../pages/conges/liste-c/liste-c.component";
 import { UpdateCComponent } from "./../../pages/conges/update-c/update-c.component";
@@ -38,6 +52,10 @@ import { OperationComponent } from "src/app/pages/operation/operation.component"
 import { UpdateComponent } from "src/app/pages/role/update/update.component";
 import { AuthGuard } from "src/app/guard/auth.guard";
 import { ListeJFComponent } from "src/app/pages/jour-ferier/liste-jf/liste-jf.component";
+import { PresenceComponent } from "src/app/pages/presence/presence.component";
+import { AddSAComponent } from "src/app/pages/super-admin/add-sa/add-sa.component";
+import { ListSAComponent } from "src/app/pages/super-admin/list-sa/list-sa.component";
+import { UpdateSAComponent } from "src/app/pages/super-admin/update-sa/update-sa.component";
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -138,5 +156,50 @@ export const AdminLayoutRoutes: Routes = [
     path: "calondar",
     component: CalondarComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: "presence",
+    component: PresenceComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "superadmin",
+    component: SuperAdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "addsa", component: AddSAComponent },
+      { path: "updatesa/:id", component: UpdateSAComponent },
+      { path: "listsa", component: ListSAComponent },
+    ],
+  },
+  {
+    path: "admin",
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "addadmin/:id", component: AddadminComponent },
+      { path: "updateadmin/:id", component: UpdateadminComponent },
+      { path: "listadmin", component: ListadminComponent },
+    ],
+  },
+  {
+    path: "employee",
+    component: EmployeeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "addemployee", component: AddemployeeComponent },
+      { path: "updateemployee/:id", component: UpdateemployeeComponent },
+      { path: "listemployee", component: ListemployeeComponent },
+    ],
+  },
+  {
+    path: "rh",
+    component: RHComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "addrh", component: AddrhComponent },
+      { path: "updaterh/:id", component: UpdaterhComponent },
+      { path: "listrh", component: ListrhComponent },
+    ],
   },
 ];

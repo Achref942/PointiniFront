@@ -11,6 +11,8 @@ import Swal from "sweetalert2"
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  x=localStorage.getItem("acteur");
+  y=JSON.parse(this.x).photo;
   name :any;
   public focus;
   public listTitles: any[];

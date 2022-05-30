@@ -1,3 +1,4 @@
+import { PresenceComponent } from './../../pages/presence/presence.component';
 import { CalondarComponent } from './../../pages/calondar/calondar.component';
 import { DemmandecongeComponent } from './../../pages/demmandeconge/demmandeconge.component';
 import { AddUsersComponent } from './../../pages/users/add-users/add-users.component';
@@ -26,6 +27,10 @@ import { EntrepriseComponent } from 'src/app/pages/entreprise/entreprise.compone
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import { AdminComponent } from 'src/app/pages/admin/admin.component';
+import { SuperAdminComponent } from 'src/app/pages/super-admin/super-admin.component';
+import { EmployeeComponent } from 'src/app/pages/employee/employee.component';
+import { RHComponent } from 'src/app/pages/rh/rh.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -56,8 +61,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PointagesComponent,
     CongesComponent,
     DemmandecongeComponent,
-    CalondarComponent
-
+    CalondarComponent,
+    PresenceComponent,
+    AdminComponent,
+    SuperAdminComponent,
+    EmployeeComponent,
+    RHComponent,
 
 
 

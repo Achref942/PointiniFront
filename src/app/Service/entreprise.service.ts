@@ -29,4 +29,5 @@ export class EntrepriseService {
       `${this.baseURL}/findEntrepriseById/${id}`
     );
   }
+  
 }

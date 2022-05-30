@@ -1,3 +1,4 @@
+// import { icon } from '@fortawesome/fontawesome-svg-core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,73 +10,71 @@ declare interface RouteInfo {
 }
 export const SuperAdmin: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-    //{ path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
-    //{ path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/calondar', title: 'Calondar',  icon:'ni-single-02 text-yellow', class: '' },
-
-
-    { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
-   // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-    //{ path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: ''  },
-    { path: '/users/listeusers', title: 'Users',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/entreprise/liseentreprise', title: 'Entreprise',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/pack/listepack', title: 'Pack',  icon:'ni-bullet-list-67 text-red', class: ''  },
+   // { path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
+    { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
+    { path:  '/superadmin/listsa', title:'SuperAdmin',icon:'ni-key-25 text-green',class:''},
+    { path:  '/admin/listadmin', title:'Admin',icon:'ni-hat-3 text-green',class:''},
+    { path:  '/rh/listrh', title:'Ressource Humaine',icon:'ni-single-02 text-green',class:''},
+    { path:  '/employee/listemployee', title:'Employee',icon:'ni-satisfied text-green',class:''},
+  //  { path: '/tables', title: 'Tables',  icon:'ni-tag', class: '' },
+    { path: '/users/listeusers', title: 'Users',  icon:'ni-collection text-blue', class: ''  },
+    { path: '/entreprise/liseentreprise', title: 'Entreprise',  icon:'ni-building text-red', class: ''  },
+    { path: '/pack/listepack', title: 'Pack',  icon:'ni-books text-red', class: ''  },
+    { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-user-run text-yellow', class: '' },
+    { path: '/calondar', title: 'Calondar',  icon:'ni-calendar-grid-58 text-yellow', class: '' },
+    { path: '/conges/liste-c', title: 'Confirmer Conges ',  icon:'ni-check-bold text-yellow', class: ''  },
     { path: '/jourFerier/liste-jf', title: 'Jours Ferier',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/role/list-role', title: 'Role ',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/conges/liste-c', title: 'Conges ',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/pause', title: 'Pause ',  icon:'ni-bullet-list-67 text-red', class: ''  },
-    { path: '/operation', title: 'Operation ',  icon:'ni-bullet-list-67 text-red', class: ''  },
+    { path: '/role/list-role', title: 'Role ',  icon:'ni-diamond text-red', class: ''  },
+    { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-watch-time text-red', class: ''  },
+    { path: '/pause', title: 'Pause ',  icon:'ni-button-pause text-red', class: ''  },
+    { path: '/operation', title: 'Operation ',  icon:'ni-money-coins text-red', class: ''  },
+    { path:  '/presence', title:'Presence',icon:'ni-bulb-61 text-red',class:''},
+
+    { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+    { path:  '', title:'Support',icon:'ni-chat-round text-blue',class:''},
+
+
 ];
 
 export const Admin: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-  //{ path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
-  //{ path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-  { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/calondar', title: 'Calondar',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/users/listeusers', title: 'Users',  icon:'ni-bullet-list-67 text-red', class: ''  },
-  { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-bullet-list-67 text-red', class: ''  },
-
-
-
-  { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
- // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-  //{ path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: ''  },
-
-
+ { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
+ { path:  '/presence', title:'Presence',icon:'ni-bulb-61 text-red',class:''},
+ { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-user-run text-yellow', class: '' },
+    { path: '/calondar', title: 'Calondar',  icon:'ni-calendar-grid-58 text-yellow', class: '' },
+    { path: '/conges/liste-c', title: 'Confirmer Conges ',  icon:'ni-check-bold text-yellow', class: ''  },
+    { path: '/users/listeusers', title: 'Users',  icon:'ni-collection text-blue', class: ''  },
+  { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-watch-time text-red', class: ''  },
+  { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+  { path:  '/rh/listrh', title:'Ressource Humaine',icon:'ni-single-02 text-green',class:''},
+  { path:  '/employee/listemployee', title:'Employee',icon:'ni-satisfied text-green',class:''},
+  { path:  '', title:'Support',icon:'ni-chat-round text-blue',class:''},
 ];
 export const RH: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-  //{ path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
-  //{ path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-  { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/calondar', title: 'Calondar',  icon:'ni-single-02 text-yellow', class: '' },
-  { path: '/users/listeusers', title: 'Users',  icon:'ni-bullet-list-67 text-red', class: ''  },
-  { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-bullet-list-67 text-red', class: ''  },
+ { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
+ { path:  '/presence', title:'Presence',icon:'ni-bulb-61 text-red',class:''},
+ { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-user-run text-yellow', class: '' },
+  { path: '/calondar', title: 'Calondar',  icon:'ni-calendar-grid-58 text-yellow', class: '' },
+  { path: '/conges/liste-c', title: 'Confirmer Conges ',  icon:'ni-check-bold text-yellow', class: ''  },
+  { path: '/users/listeusers', title: 'Users',  icon:'ni-collection text-blue', class: ''  },
+  { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-watch-time text-red', class: ''  },
+  { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+  { path:  '/employee/listemployee', title:'Employee',icon:'ni-satisfied text-green',class:''},
 
+  { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+  { path:  '', title:'Support',icon:'ni-chat-round text-blue',class:''},
 
-
-  { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
- // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-  //{ path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: ''  },
 ];
   export const Employee: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-    //{ path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
-    //{ path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-single-02 text-yellow', class: '' },
-    { path: '/calondar', title: 'Calondar',  icon:'ni-single-02 text-yellow', class: '' },
+    { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
+    { path: '/demmandeconge', title: 'Demmande Conge',  icon:'ni-user-run text-yellow', class: '' },
+    { path: '/calondar', title: 'Calondar',  icon:'ni-calendar-grid-58 text-yellow', class: '' },
 
+    { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+    { path:  '', title:'Support',icon:'ni-chat-round text-blue',class:''},
 
-    { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
-   // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-    //{ path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: ''  },
 
 
   ];
@@ -98,19 +97,16 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     if (this.y.libelle=="SuperAdmin"){
-      alert("SuperAdmin ")
       this.menuItems = SuperAdmin.filter(menuItem => menuItem);
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;});
     }
     if (this.y.libelle=="Employee"){
-      alert("Employee ")
       this.menuItems = Employee.filter(menuItem => menuItem);
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;});
     }
     if (this.y.libelle=="Admin"){
-      alert("Admin ")
       this.menuItems = Admin.filter(menuItem => menuItem);
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;});

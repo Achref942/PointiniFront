@@ -19,4 +19,15 @@ export class User {
   role: Role;
   entreprise: Entreprise;
   photo:String;
+  fichedepie:any;
+  inOut:boolean;
+
+date: any;
+etat:any;
+fichePaie: any;
+nbHeureReatardvUser:any;
+nbHeureTravUser: any;
+numTel: any;
+presence: any;
+
 }

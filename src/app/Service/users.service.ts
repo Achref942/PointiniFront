@@ -1,3 +1,4 @@
+import { Entreprise } from './../models/entreprise';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
@@ -29,5 +30,25 @@ export class UserService {
   getByEntreprise(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseURL}/findByEntreprise/${id}`);
   }
+  Present(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/present/${id}`);
+  }
+  absent(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/abscent/${id}`);
+  }
+  addUserEntreprise(id:number,ide:number):Observable<User>{
+    return this.http.get<User>(`${this.baseURL}/addEntrepriseUser/${id}/${ide}`);
+  }
+  addUserRole(id:number,idr:number):Observable<User>{
+    return this.http.get<User>(`${this.baseURL}/addRole/${id}/${idr}`);
+  }
+  activer(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/activer/${id}`);
+  }
+  desactiver(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/desactiver/${id}`);
+
+  }
+
 
 }

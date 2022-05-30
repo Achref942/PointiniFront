@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log("data=",data);
 
         if (data == null || this.user == null){
-console.log("eure de conx fi9 3meeee ");
+console.log("eureu de cox");
 
           this.router.navigateByUrl("/login");
         }

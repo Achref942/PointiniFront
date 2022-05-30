@@ -72,8 +72,8 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Activer</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Desactiver </a>
+                                            <a class="alert alert-success dropdown-item" (click)="activer(user.id)">Activer</a>
+                                            <a class="alert alert-danger dropdown-item" (click)="desactiver(user.id)">Desactiver </a>
                                             <a class="dropdown-item" (click)="updUser(user.id)">update </a>
                                         </div>
                                     </div>

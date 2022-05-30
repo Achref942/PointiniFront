@@ -42,10 +42,16 @@ export class ListeusersComponent implements OnInit {
       });
   }
 
+  activer(id:any){
+    this.userService.activer(id).subscribe(data=>{
+      this.users=data });
+  }
+  desactiver(id:any){
+    this.userService.desactiver(id).subscribe(data=>{
+      this.users=data });  }
   updUser(id:any){
     this.router.navigate(["/users/updateusers",id]);
   }
-
 
 }
 

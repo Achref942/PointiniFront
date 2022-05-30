@@ -27,5 +27,8 @@ getall(){
   updEntreprise(id:any){
     this.router.navigate(["/entreprise/updateentreprise",id]);
   }
+  addAdmin(id:any){
+    this.router.navigate(["/admin/addadmin",id]);
+  }
 
 }
