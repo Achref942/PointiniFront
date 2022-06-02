@@ -37,6 +37,7 @@ export class ListadminComponent implements OnInit {
       this.router.navigate(["/admin/updateadmin",id]);
     }
     ngOnInit(): void {
+      
       this. findUserByRole();
     }
 

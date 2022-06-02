@@ -19,6 +19,7 @@ export class AddadminComponent implements OnInit {
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
+  submitted: boolean;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -60,7 +61,7 @@ export class AddadminComponent implements OnInit {
         this.test = res;
         console.log("test", this.test.id);
         this.userService.addUserRole(this.test.id, 9).subscribe((data) => {
-          
+
           this.userService.addUserEntreprise(this.test.id,this.idfromentreprise).subscribe((data)=>
           {console.log("add user to entreprise")});
 
@@ -84,6 +85,12 @@ export class AddadminComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.saveUser();
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {console.log("okkk")
+      this.saveUser();
+
   }
-}
+}}

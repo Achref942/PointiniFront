@@ -1,3 +1,4 @@
+import { Pause } from './../../models/pause';
 import { PauseService } from './../../Service/pause.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,19 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pause.component.scss']
 })
 export class PauseComponent implements OnInit {
-pause:any;
+pauses:any;
   constructor(private pauseService:PauseService) { }
-
-  ngOnInit(): void {
-
-    this.getallpauses();
-    console.log("test2",this.pause)
-  }
   getallpauses(){
-    this.pauseService.GetAll().subscribe(data=>{this.pause=data
+    this.pauseService.GetAll().subscribe((data)=>{this.pauses=data
     });
-    console.log("test1",this.pause)
+    console.log("test1",this.pauses)
   }
+  ngOnInit(): void {
+    this.pauseService.GetAll().subscribe((data:any)=>{
+
+      console.log("test1",data);
+      this.pauses=data;
+      console.log("test2",this.pauses);
+
+    });
+
+  }
+
 
 
 

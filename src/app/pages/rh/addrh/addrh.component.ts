@@ -17,6 +17,7 @@ test:any
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
+  submitted: boolean;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -77,6 +78,12 @@ test:any
     this.router.navigate(["/rh/listrh"]);
   }
   onSubmit() {
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {console.log("okkk")
       this.saveUser();
+  }
   }
 }

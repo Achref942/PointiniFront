@@ -14,6 +14,7 @@ export class AddSAComponent implements OnInit {
   x = localStorage.getItem("acteur");
   y = JSON.parse(this.x).entreprise;
 test:any
+submitted:Boolean
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
@@ -31,7 +32,6 @@ test:any
       password: ["", Validators.required],
       username: ["", Validators.required],
       adresse: ["", Validators.required],
-      heure_deb: ["", Validators.required],
     });
     console.log("first test");
   }
@@ -48,8 +48,6 @@ test:any
     formData.append("email", this.formGroup.value.email);
     formData.append("password", this.formGroup.value.password);
     formData.append("username", this.formGroup.value.username);
-    formData.append("adresse", this.formGroup.value.adresse);
-    formData.append("heure_deb", this.formGroup.value.heure_deb);
     formData.append("file", this.fileToUpload[0]);
 
     this.userService.AddUser(formData).subscribe(
@@ -84,6 +82,11 @@ console.log(data);
   });
 }
   onSubmit() {
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {console.log("okkk")
       this.saveUser();
-  }
+  }}
 }

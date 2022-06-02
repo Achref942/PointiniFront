@@ -18,6 +18,7 @@ test:any
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
+  submitted:boolean
   constructor(
     private UserService: UserService,
     private router: Router,
@@ -87,8 +88,13 @@ test:any
   }
 
   onSubmit() {
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {console.log("okkk")
       this.saveUser();
       this.addUserToEntreprise();
-
   }
+}
 }

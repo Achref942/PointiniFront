@@ -8,7 +8,7 @@ import { PointagesComponent } from './../../pages/pointages/pointages.component'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';import { ChildrenOutletContexts, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
@@ -31,6 +31,8 @@ import { AdminComponent } from 'src/app/pages/admin/admin.component';
 import { SuperAdminComponent } from 'src/app/pages/super-admin/super-admin.component';
 import { EmployeeComponent } from 'src/app/pages/employee/employee.component';
 import { RHComponent } from 'src/app/pages/rh/rh.component';
+import { FichedePaieComponent } from 'src/app/pages/fichede-paie/fichede-paie.component';
+import { ModeKiosqueComponent } from 'src/app/pages/mode-kiosque/mode-kiosque.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -45,7 +47,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     NgbModule,
     ClipboardModule,
-    FullCalendarModule
+    FullCalendarModule,
+   // FormGroup
   ],
   declarations: [
     DashboardComponent,
@@ -67,7 +70,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     SuperAdminComponent,
     EmployeeComponent,
     RHComponent,
-
+    FichedePaieComponent,
+    ModeKiosqueComponent,
 
 
 

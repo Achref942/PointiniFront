@@ -29,5 +29,21 @@ export class EntrepriseService {
       `${this.baseURL}/findEntrepriseById/${id}`
     );
   }
-  
+  AddPackToEntreprise(idp:number,ide:number):Observable<Entreprise>{
+    return this.http.get<Entreprise>(`${this.baseURL}/AddPackToEntreprise/${idp}/${ide}`);
+  }
+
+  DesactiverEntreprise(ide:number):Observable<Entreprise>{
+    return this.http.get<Entreprise>(`${this.baseURL}/desactiverEntreprise/${ide}`);
+  }
+
+  DeleteEntreprise(ide:number):Observable<Entreprise>{
+    return this.http.delete<Entreprise>(`${this.baseURL}/delete/${ide}`);
+}
+
+
+
+
+
+
 }

@@ -6,7 +6,7 @@ import { ListRoleComponent } from "./pages/role/list-role/list-role.component";
 import { ListeusersComponent } from "./pages/users/listeusers/listeusers.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormGroup, FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
@@ -47,6 +47,8 @@ import { ListrhComponent } from './pages/rh/listrh/listrh.component';
 import { AddemployeeComponent } from './pages/employee/addemployee/addemployee.component';
 import { UpdateemployeeComponent } from './pages/employee/updateemployee/updateemployee.component';
 import { ListemployeeComponent } from './pages/employee/listemployee/listemployee.component';
+import { FichedePaieComponent } from './pages/fichede-paie/fichede-paie.component';
+import { ModeKiosqueComponent } from './pages/mode-kiosque/mode-kiosque.component';
 
 
 
@@ -60,6 +62,7 @@ import { ListemployeeComponent } from './pages/employee/listemployee/listemploye
     NgbModule,
     RouterModule,
     AppRoutingModule,
+    //FormGroup
 
   ],
   declarations: [
@@ -128,7 +131,7 @@ import { ListemployeeComponent } from './pages/employee/listemployee/listemploye
     AddadminComponent,
     ListadminComponent,
     UpdateadminComponent,
-    
+
     //rh
     AddrhComponent,
     UpdaterhComponent,
@@ -136,6 +139,8 @@ import { ListemployeeComponent } from './pages/employee/listemployee/listemploye
     AddemployeeComponent,
     UpdateemployeeComponent,
     ListemployeeComponent,
+
+
 
 
 

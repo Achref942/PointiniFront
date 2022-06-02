@@ -1,6 +1,7 @@
+import { FormBuilder, FormGroup, Validators,NgForm} from "@angular/forms";
 import { Router } from '@angular/router';
 import { User } from './../../models/users';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/Service/login.service';
 import Swal from "sweetalert2"
 
@@ -10,24 +11,73 @@ import Swal from "sweetalert2"
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
-  isDirty(): boolean | import("rxjs").Observable<boolean> | Promise<boolean> {
-    throw new Error('Method not implemented.');
-  }
+export class LoginComponent implements OnInit {
   user: User=new User;
-  constructor(public loginServise:LoginService,private router:Router) { }
-  ngOnDestroy(): void {
-  }
+  formGroup: FormGroup;
+  constructor(public loginServise:LoginService,private router:Router  , private form:FormBuilder ) { }
+
   ngOnInit(): void {
+
   }
 
   post() {
+
+//     var password=document.forms["form"]["password"].value;
+//     var email=document.forms["form"]["email"].value;
+// //email controle
+//     if (email == "" || email == null)
+//     {
+//       Swal.fire(
+//         'Mettez une adresse email valide.',
+//         'error'
+//       )
+//         return false;
+//     }
+//      if (email.indexOf("@", 0) < 0)
+//      {
+//        Swal.fire(
+//          'Mettez une adresse email.',
+//          'error'
+//        )
+//        email.focus();
+//          return false;
+//      }
+//      if (email.indexOf(".", 0) < 0)
+//      {
+//        Swal.fire(
+//          'Mettez une adresse email.',
+//          'error'
+//        )
+//         email.focus();
+//          return false;
+//      }
+// //password controle
+
+//      if (password == "")
+//      {
+//       Swal.fire(
+//         {
+//           icon: 'error',
+//          title: 'Saisissez votre mot de passe.',
+
+//         }
+
+//       )
+//          return false;
+//      }
+
       this.loginServise.Post(this.user).subscribe(data=>{
         console.log("data=",data);
 
         if (data == null || this.user == null){
-console.log("eureu de cox");
+          Swal.fire({
+            icon: 'error',
+           title: 'Mot de passe incorrecte!!!',
 
+          }
+
+
+          )
           this.router.navigateByUrl("/login");
         }
         else{
@@ -35,6 +85,7 @@ console.log("eureu de cox");
           localStorage.setItem("statu","1");
           localStorage.setItem("acteur",JSON.stringify(data));
           this.router.navigateByUrl("/dashboard");
+
           const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -54,9 +105,11 @@ console.log("eureu de cox");
         }
       })
   }
-  onSubmit(){
-    this.post();
 
+  onSubmit(loginForm:NgForm){
+    this.post();
     }
 
 }
+
+

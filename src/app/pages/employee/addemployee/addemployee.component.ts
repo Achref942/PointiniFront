@@ -17,6 +17,7 @@ export class AddemployeeComponent implements OnInit {
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
+  submitted: boolean;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -81,6 +82,12 @@ export class AddemployeeComponent implements OnInit {
     });
   }
   onSubmit() {
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {console.log("okkk")
     this.saveUser();
   }
+}
 }

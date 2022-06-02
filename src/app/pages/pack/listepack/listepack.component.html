@@ -9,12 +9,9 @@
                         <div class="col-8">
                             <h3 class="mb-0">Liste Packs</h3>
                         </div>
-                        <div class="col-4 text-right">
-                            <button routerLink='/pack/addpack' class="btn btn-info">Create Pack</button>
-                        </div>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
@@ -40,7 +37,7 @@
                                     {{pack.frais}}
                                 </td>
                                 <td>
-                                    {{pack.DaysMonths}}
+                                    {{pack.type}}
                                 </td>
                                 <td>
                                     {{pack.duree}}
@@ -56,7 +53,7 @@
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item" href="javascript:void(0)">Activer</a>
                                             <a class="dropdown-item" href="javascript:void(0)">Desactiver </a>
-                                            <a class="dropdown-item" (click)="updPack(pack.id)">update </a>
+                                            <a class="dropdown-item" (click)="updPack(pack.id)">Update </a>
                                         </div>
                                     </div>
                                 </td>

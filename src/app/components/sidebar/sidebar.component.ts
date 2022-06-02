@@ -1,6 +1,8 @@
 // import { icon } from '@fortawesome/fontawesome-svg-core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DropDownActionKey } from 'igniteui-angular/lib/drop-down/drop-down.common';
+import { type } from 'os';
 
 declare interface RouteInfo {
     path: string;
@@ -11,7 +13,7 @@ declare interface RouteInfo {
 export const SuperAdmin: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
    // { path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
+    // { path: '/user-profile', title: 'User profile',  icon:'ni-badge text-blue', class: '' },
     { path:  '/superadmin/listsa', title:'SuperAdmin',icon:'ni-key-25 text-green',class:''},
     { path:  '/admin/listadmin', title:'Admin',icon:'ni-hat-3 text-green',class:''},
     { path:  '/rh/listrh', title:'Ressource Humaine',icon:'ni-single-02 text-green',class:''},
@@ -26,11 +28,12 @@ export const SuperAdmin: RouteInfo[] = [
     { path: '/jourFerier/liste-jf', title: 'Jours Ferier',  icon:'ni-bullet-list-67 text-red', class: ''  },
     { path: '/role/list-role', title: 'Role ',  icon:'ni-diamond text-red', class: ''  },
     { path: '/pointages/list-p', title: 'Pointage ',  icon:'ni-watch-time text-red', class: ''  },
+    {path:'/modekiosque',title:'Mode Kiosque',icon:'ni-watch-time text-red', class: ''  },
     { path: '/pause', title: 'Pause ',  icon:'ni-button-pause text-red', class: ''  },
     { path: '/operation', title: 'Operation ',  icon:'ni-money-coins text-red', class: ''  },
     { path:  '/presence', title:'Presence',icon:'ni-bulb-61 text-red',class:''},
 
-    { path:  '', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
+    { path:  '/fichedepie', title:'Fiche de Paie',icon:'ni-cloud-download-95 text-blue',class:''},
     { path:  '', title:'Support',icon:'ni-chat-round text-blue',class:''},
 
 

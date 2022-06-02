@@ -28,6 +28,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">username</label>
                                         <input type="email" id="email" class="form-control form-control-alternative" placeholder="" [(ngModel)]="user.username" name="username">
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'username')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            username Oblgatoire
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -35,7 +38,9 @@
 
                                         <label class="form-control-label" for="input-email">Email address</label>
                                         <input type="E" id="email" class="form-control form-control-alternative" placeholder="" [(ngModel)]="user.email" name="email">
-
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'email')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            Email Oblgatoire
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +50,9 @@
 
                                         <label class="form-control-label" for="input-first-name">First name</label>
                                         <input type="text" id="firstName" class="form-control form-control-alternative" placeholder="First name" value="" [(ngModel)]="user.firstName" name="firstName">
-
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'firstName')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            First name Oblgatoire
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -53,7 +60,9 @@
 
                                         <label class="form-control-label" for="input-last-name">Last name</label>
                                         <input type="text" id="lastName" class="form-control form-control-alternative" placeholder="Last name" value="" [(ngModel)]="user.lastName" name="lastName">
-
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'lastName')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            Last name Oblgatoire
+                                        </div>
 
                                     </div>
                                 </div>
@@ -68,6 +77,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-address">Address</label>
                                         <input id="address" class="form-control form-control-alternative" placeholder="Home Address" value="" type="text" [(ngModel)]="user.adresse" name="adresse">
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'adresse')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            Address Oblgatoire
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -78,6 +90,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-country">Heure Debut</label>
                                         <input type="time" id="input-country" class="form-control form-control-alternative" placeholder="Country" value=" " [(ngModel)]="user.heure_deb" name="heure_deb">
+                                        <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'heure_deb')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                            Last name Oblgatoire
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -98,14 +113,20 @@
                         <h6 class="heading-small text-muted mb-4">Password User </h6>
                         <div class="pl-lg-4">
                             <div class="form-group">
-                                <label>password</label>
+                                <label>Password</label>
                                 <input id="input-address" class="form-control form-control-alternative" placeholder="password" value="" type="password" [(ngModel)]="user.password" name="password">
+                                <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'password')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                    Password Oblgatoire
+                                </div>
                             </div>
                         </div>
                         <div class="pl-lg-4">
                             <div class="form-group">
-                                <label>password</label>
+                                <label>Confime Password</label>
                                 <input id="input-address" class="form-control form-control-alternative" placeholder="confime password" value="" type="password" name="password">
+                                <div style="color:rgb(0, 0, 0); " *ngIf="formGroup.get( 'password')?.hasError( 'required') && submitted " class="alert alert-danger ">
+                                    Password Oblgatoire
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

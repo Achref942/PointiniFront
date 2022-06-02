@@ -1,3 +1,4 @@
+import { Pack } from 'src/app/models/pack';
 import { AddemployeeComponent } from "./../../pages/employee/addemployee/addemployee.component";
 import { UpdateemployeeComponent } from "./../../pages/employee/updateemployee/updateemployee.component";
 import { ListemployeeComponent } from "./../../pages/employee/listemployee/listemployee.component";
@@ -56,6 +57,8 @@ import { PresenceComponent } from "src/app/pages/presence/presence.component";
 import { AddSAComponent } from "src/app/pages/super-admin/add-sa/add-sa.component";
 import { ListSAComponent } from "src/app/pages/super-admin/list-sa/list-sa.component";
 import { UpdateSAComponent } from "src/app/pages/super-admin/update-sa/update-sa.component";
+import { FichedePaieComponent } from "src/app/pages/fichede-paie/fichede-paie.component";
+import { ModeKiosqueComponent } from 'src/app/pages/mode-kiosque/mode-kiosque.component';
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -96,7 +99,7 @@ export const AdminLayoutRoutes: Routes = [
     component: PackComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "addpack", component: AddpackComponent },
+      { path: "addpack/:id", component: AddpackComponent },
       { path: "listepack", component: ListepackComponent },
       { path: "updatepack/:id", component: UpdatepackComponent },
     ],
@@ -202,4 +205,6 @@ export const AdminLayoutRoutes: Routes = [
       { path: "listrh", component: ListrhComponent },
     ],
   },
+  {path:"fichedepie",component:FichedePaieComponent, canActivate:[AuthGuard]},
+  {path:"modekiosque",component:ModeKiosqueComponent, canActivate:[AuthGuard]}
 ];

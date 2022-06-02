@@ -11,7 +11,7 @@
 
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
@@ -22,6 +22,7 @@
                                 <th>email</th>
                                 <th>date_creation</th>
                                 <th>Entreprise</th>
+                                <th>Activer/Desativer</th>
                                 <th>action</th>
 
 
@@ -50,11 +51,14 @@
                                 <td>
                                     {{user.date_creation}}
                                 </td>
+
                                 <td>
                                     {{user.entreprise.libelle}}
                                 </td>
 
-
+                                <td>
+                                    {{user.etat}}
+                                </td>
 
 
                                 <td class="text-right">
@@ -65,7 +69,7 @@
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item" href="javascript:void(0)">Activer</a>
                                             <a class="dropdown-item" href="javascript:void(0)">Desactiver </a>
-                                            <a class="dropdown-item" (click)="updUser(user.id)">update </a>
+                                            <a class="dropdown-item" (click)="updUser(user.id)">Modifier</a>
 
                                         </div>
                                     </div>

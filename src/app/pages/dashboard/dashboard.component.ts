@@ -13,7 +13,7 @@ import { map, share, Subscription, timer } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   time = new Date();
-  intervalId;
+  intervalId: NodeJS.Timer;
   subscription: Subscription
 
 

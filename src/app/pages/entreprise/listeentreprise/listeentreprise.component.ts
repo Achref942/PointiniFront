@@ -30,5 +30,23 @@ getall(){
   addAdmin(id:any){
     this.router.navigate(["/admin/addadmin",id]);
   }
+  addPack(id:any){
+    this.router.navigate(["/pack/addpack",id]);
+  }
+  Desactiverentreprise(id:any){
+this.entrepriseService.DesactiverEntreprise(id).subscribe(
+  data=>{
+    console.log(data)
+    this.router.navigate(["/entreprise/liseentreprise"]);
+  });
+  }
+  Deleteentreprise(id:any){
+    this.entrepriseService.DeleteEntreprise(id).subscribe(
+      data=>{
+        console.log(data)
+        this.router.navigate(["/entreprise/addenreprise"]);
+        this.router.navigate(["/entreprise/liseentreprise"]);
+      });
+  }
 
 }

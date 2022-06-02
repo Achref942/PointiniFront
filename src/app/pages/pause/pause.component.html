@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
@@ -33,21 +33,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor=" let p of pause">
+                            <tr *ngFor="let pause of pauses">
                                 <td>
-                                    {{p.id}}
+                                    {{pause.id}}
                                 </td>
                                 <td>
-                                    {{p.libelle}}
+                                    {{pause.libelle}}
                                 </td>
                                 <td>
-                                    {{p.type}}
+                                    {{pause.type}}
                                 </td>
                                 <td>
-                                    {{p.duree}}
+                                    {{pause.duree}}
                                 </td>
                                 <td>
-                                    {{p.expirationPause}}
+                                    {{pause.expirationPause}}
                                 </td>
 
                                 <td class="text-right">
