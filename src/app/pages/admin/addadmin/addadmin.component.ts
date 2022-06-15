@@ -68,7 +68,7 @@ export class AddadminComponent implements OnInit {
           this.user = data;
           console.log(data);
           this.goToUserList();
-          Swal.fire("User!", "Ajouté avec succès", "success");
+          Swal.fire("Admin!", "Ajouté avec succès", "success");
         });
       },
       (error) => console.log(error)

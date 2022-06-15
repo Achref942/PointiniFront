@@ -33,6 +33,9 @@ import { EmployeeComponent } from 'src/app/pages/employee/employee.component';
 import { RHComponent } from 'src/app/pages/rh/rh.component';
 import { FichedePaieComponent } from 'src/app/pages/fichede-paie/fichede-paie.component';
 import { ModeKiosqueComponent } from 'src/app/pages/mode-kiosque/mode-kiosque.component';
+import { DemandeAvanceComponent } from 'src/app/pages/demande-avance/demande-avance.component';
+import { NotreentrepriseComponent } from 'src/app/pages/notreentreprise/notreentreprise.component';
+import { OperationComponent } from 'src/app/pages/operation/operation.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -72,7 +75,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     RHComponent,
     FichedePaieComponent,
     ModeKiosqueComponent,
-
+    NotreentrepriseComponent,
+    DemandeAvanceComponent,
+    OperationComponent,
 
 
 

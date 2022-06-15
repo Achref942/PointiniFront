@@ -24,6 +24,8 @@
                                 <th scope="col">prixHeurSup</th>
                                 <th scope="col">nbCongePMois</th>
                                 <th scope="col">expirationPack</th>
+                                <th scope="col">Activer/Desactiver</th>
+
                                 <th scope="col"></th>
 
 
@@ -38,14 +40,15 @@
                                 <td>{{entreprise.prixHeurSup}}</td>
                                 <td>{{entreprise.nbCongePMois}}</td>
                                 <td>{{entreprise.expirationPack}}</td>
-                                <td>{{entreprise.expirationPack}}</td>
+                                <td>{{entreprise.etat}}</td>
                                 <td class="text-right">
                                     <div ngbDropdown placement="bottom-right">
                                         <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <!-- <a class="dropdown-item" (click)="Desactiverentreprise(entreprise.id)">Desactiver</a> -->
+                                            <a class="dropdown-item" (click)="Activerentreprise(entreprise.id)">Activer</a>
+                                            <a class="dropdown-item" (click)="Desactiverentreprise(entreprise.id)">Desactiver</a>
                                             <a class="dropdown-item" (click)="Deleteentreprise(entreprise.id)">Delete </a>
                                             <a class="dropdown-item" (click)="updEntreprise(entreprise.id)">update </a>
                                             <a class="dropdown-item" (click)="addAdmin(entreprise.id)">Creé un Admin </a>

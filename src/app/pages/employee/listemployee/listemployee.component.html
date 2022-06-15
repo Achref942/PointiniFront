@@ -9,7 +9,7 @@
                             <h3 class="mb-0">Liste Employee</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <button routerLink='/employee/addemployee' class="btn btn-info">Create Employee</button>
+                            <button routerLink='/employee/addemployee' class="btn btn-info">créer Employee</button>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                                 <th>first Name</th>
                                 <th>last Name</th>
                                 <th>email</th>
-                                <th>date_creation</th>
+                                <th>etat</th>
                                 <th>action</th>
 
 
@@ -49,7 +49,7 @@
                                     {{user.email}}
                                 </td>
                                 <td>
-                                    {{user.entreprise.libelle}}
+                                    {{user.etat}}
                                 </td>
 
 
@@ -60,9 +60,14 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Activer</a>
-                                            <a class="dropdown-item" href="javascript:void(0)">Desactiver </a>
+                                            <a class="alert alert-success dropdown-item" (click)="activer(user.id)">Activer</a>
+                                            <a class="alert alert-danger dropdown-item" (click)="desactiver(user.id)">Desactiver </a>
                                             <a class="dropdown-item" (click)="updUser(user.id)">update </a>
+                                            <a class="dropdown-item" (click)="creerPointager(user.id)">Créer Pointage </a>
+                                            <a class="alert alert-success dropdown-item" (click)="prime(user.id)">Ajouter Prime </a>
+                                            <a class="alert alert-danger dropdown-item" (click)="penalite(user.id)">Ajouter Penalité </a>
+
+
 
                                         </div>
                                     </div>

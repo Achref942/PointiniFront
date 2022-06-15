@@ -21,7 +21,7 @@ export class User {
   photo:String;
   fichedepie:any;
   inOut:boolean;
-
+pinCode:number;
 date: any;
 etat:any;
 fichePaie: any;

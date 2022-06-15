@@ -36,7 +36,7 @@
                               <div class="alert alert-danger" *ngIf="email.error?.['email'] && email.touched && !email.valid">Saisir un email valide</div>
                               <div class="alert alert-danger" *ngIf="email.error?.['required'] && email.touched">Saisir votre email</div> -->
 
-                                <input class="form-control" type="email" [email]="true" #email="ngModel" [(ngModel)]="user.email" name="email" required />
+                                <input class="form-control" placeholder="Email" type="email" [email]="true" #email="ngModel" [(ngModel)]="user.email" name="email" required />
 
                                 <div class="alert alert-danger" *ngIf="email.errors?.['email'] && email.touched  && !email.valid">
                                     S'il vous plaît, mettez une adresse email valide! </div>

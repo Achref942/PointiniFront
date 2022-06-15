@@ -18,7 +18,7 @@
 
                 <div class="text-center mt-3">
                     <h5 class="mt-2 mb-0">{{name}}</h5>
-                    <span>{{name}}</span>
+                    <span>{{z}}</span>
 
                     <div class="px-4 mt-1">
 
@@ -35,7 +35,7 @@
                     </ul>
 
                     <div class="buttons">
-                        <button (click)="enableDisableRule('icon')" [ngClass]="{'#f56036' : toggle, '#f5385a': !toggle}" class="buhtton btn  button3 signinbutton" style="font-size:100px ;width :200px; height:160px"><i class="fas fa-sign-in-alt" [ngClass]="toggle ? 'fa-sign-in-alt' : 'fa-sign-out-alt'" ></i></button>
+                        <button (click)="enableDisableRule()" [ngClass]="{'#f56036' : toggle, '#f5385a': !toggle}" class="buhtton btn  button3 signinbutton" style="font-size:100px ;width :200px; height:160px"><i class="fas {{message}}" ></i></button>
                         <h5>{{status}}</h5>
                     </div>
                     <br>

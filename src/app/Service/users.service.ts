@@ -49,6 +49,8 @@ export class UserService {
     return this.http.get<User>(`${this.baseURL}/desactiver/${id}`);
 
   }
-
+  fichedePaie(id: number) {
+    return this.http.get<User>(`${this.baseURL}/export/OnUser/pdf/${id}`);
+  }
 
 }

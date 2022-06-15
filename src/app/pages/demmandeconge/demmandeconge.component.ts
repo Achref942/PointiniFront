@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Conges } from 'src/app/models/conges';
 import { CongesService } from 'src/app/Service/conges.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-demmandeconge',
@@ -23,7 +24,13 @@ export class DemmandecongeComponent implements OnInit {
     );
   }
   goTodemmandeconge() {
-    alert("bbbbb");
+    this.router.navigate(["/dashboard"]);
+    Swal.fire(
+      'Demande congé !',
+      'en cours de traitement',
+      'success'
+    )
+    window.location.reload();
   }
   onSubmit() {
     console.log(this.conge);

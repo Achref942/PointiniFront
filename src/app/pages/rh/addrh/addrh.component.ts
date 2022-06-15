@@ -14,6 +14,7 @@ export class AddrhComponent implements OnInit {
   x = localStorage.getItem("acteur");
   y = JSON.parse(this.x).entreprise;
 test:any
+test2:any
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
@@ -41,6 +42,12 @@ test:any
     this.fileToUpload = <Array<File>>files.target.files;
     console.log(this.fileToUpload);
   }
+  addRoleToUser() {
+    this.userService.addUserRole(this.test2.id,12).subscribe((data) => {
+      this.user = data;
+      console.log(data);
+    });
+  }
 
   saveUser() {
     let formData = new FormData();
@@ -56,26 +63,27 @@ test:any
     this.userService.AddUser(formData).subscribe(
       (res) => {
         console.log(res);
-        this.test=res;
-        console.log("test",this.test.id)
-        this.userService.addUserEntreprise(this.test.id,this.y.id).subscribe((data)=>
-        {console.log("add user to entreprise")});
-        this.userService.addUserRole(
-          this.test.id,
-          12
-        ).subscribe((data)=>{
-          this.user = data;
-      console.log(data);
-      this.goToUserList();
-      Swal.fire("User!", "Ajouté avec succès", "success");
-        });
+        this.test = res;
+        console.log("user id", this.test.id);
+        console.log("entreprise ",this.y);
+        console.log("entreprise id ",this.y.id);
+
+        this.userService.addUserEntreprise(this.test.id,this.y.id).subscribe((pio)=>{
+          console.log("add user to entreprise")
+          this.test2=pio;
+          this.addRoleToUser();
+
+        }
+          );
       },
       (error) => console.log(error)
     );
   }
-
-  goToUserList() {
+  goToRHList() {
     this.router.navigate(["/rh/listrh"]);
+  }
+  goToRHList2() {
+    this.router.navigate(["/rh/addrh"]);
   }
   onSubmit() {
     if (this.formGroup.invalid) {
@@ -84,6 +92,9 @@ test:any
     }
    else {console.log("okkk")
       this.saveUser();
+      this.goToRHList();
   }
-  }
+  this.goToRHList2();
+  this.goToRHList();
+}
 }

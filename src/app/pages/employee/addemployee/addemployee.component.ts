@@ -14,6 +14,8 @@ export class AddemployeeComponent implements OnInit {
   x = localStorage.getItem("acteur");
   y = JSON.parse(this.x).entreprise;
   test: any;
+  test2: any;
+
   user: User = new User();
   fileToUpload: Array<File> = [];
   formGroup: FormGroup;
@@ -57,15 +59,23 @@ export class AddemployeeComponent implements OnInit {
       (res) => {
         console.log(res);
         this.test = res;
-        console.log("test", this.test.id);
-        this.userService.addUserEntreprise(this.test.id,this.y.id).subscribe((data)=>
-        {console.log("add user to entreprise")});
-        this.userService.addUserRole(this.test.id,10).subscribe((data) => {
-          this.user = data;
-          console.log(data);
-          this.goToUserList();
-          Swal.fire("User!", "Ajouté avec succès", "success");
-        });
+        console.log("user id", this.test.id);
+        console.log("entreprise ",this.y);
+        console.log("entreprise id ",this.y.id);
+
+        this.userService.addUserEntreprise(this.test.id,this.y.id).subscribe((pio)=>{
+          console.log("add user to entreprise")
+          this.test2=pio;
+          this.addRoleToUser();
+
+        }
+          );
+        // this.userService.addUserRole(this.test2.id,10).subscribe((data) => {
+        //   this.user = data;
+        //   console.log(data);
+        //   this.goToUserList();
+        //   Swal.fire("User!", "Ajouté avec succès", "success");
+        // });
 
       },
       (error) => console.log(error)
@@ -76,7 +86,7 @@ export class AddemployeeComponent implements OnInit {
     this.router.navigate(["/employee/listemployee"]);
   }
   addRoleToUser() {
-    this.userService.addUserRole(this.test.id, 9).subscribe((data) => {
+    this.userService.addUserRole(this.test2.id,10).subscribe((data) => {
       this.user = data;
       console.log(data);
     });
@@ -88,6 +98,10 @@ export class AddemployeeComponent implements OnInit {
     }
    else {console.log("okkk")
     this.saveUser();
+    this.goToUserList();
+    this.goToUserList();
+
+
   }
 }
 }

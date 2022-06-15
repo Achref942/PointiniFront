@@ -1,6 +1,6 @@
-import { Pack } from 'src/app/models/pack';
+import { DemandeAvanceComponent } from './../../pages/demande-avance/demande-avance.component';
 import { AddemployeeComponent } from "./../../pages/employee/addemployee/addemployee.component";
-import { UpdateemployeeComponent } from "./../../pages/employee/updateemployee/updateemployee.component";
+import { UpdateemployeeComponent } from "../../pages/employee/updateemployee/updateemployee.component";
 import { ListemployeeComponent } from "./../../pages/employee/listemployee/listemployee.component";
 import { ListrhComponent } from "./../../pages/rh/listrh/listrh.component";
 import { UpdaterhComponent } from "./../../pages/rh/updaterh/updaterh.component";
@@ -49,7 +49,6 @@ import { JourFerierComponent } from "src/app/pages/jour-ferier/jour-ferier.compo
 import { UsersComponent } from "../../pages/users/users.component";
 import { RoleComponent } from "src/app/pages/role/role.component";
 import { CongesComponent } from "src/app/pages/conges/conges.component";
-import { OperationComponent } from "src/app/pages/operation/operation.component";
 import { UpdateComponent } from "src/app/pages/role/update/update.component";
 import { AuthGuard } from "src/app/guard/auth.guard";
 import { ListeJFComponent } from "src/app/pages/jour-ferier/liste-jf/liste-jf.component";
@@ -59,6 +58,16 @@ import { ListSAComponent } from "src/app/pages/super-admin/list-sa/list-sa.compo
 import { UpdateSAComponent } from "src/app/pages/super-admin/update-sa/update-sa.component";
 import { FichedePaieComponent } from "src/app/pages/fichede-paie/fichede-paie.component";
 import { ModeKiosqueComponent } from 'src/app/pages/mode-kiosque/mode-kiosque.component';
+import { NotreentrepriseComponent } from 'src/app/pages/notreentreprise/notreentreprise.component';
+import { OperationComponent } from 'src/app/pages/operation/operation.component';
+import { AddPenaliteAllComponent } from 'src/app/pages/operation/add-penalite-all/add-penalite-all.component';
+import { AddPenaliteOneComponent } from 'src/app/pages/operation/add-penalite-one/add-penalite-one.component';
+import { AddPrimeAllComponent } from 'src/app/pages/operation/add-prime-all/add-prime-all.component';
+import { AddPrimeOneComponent } from 'src/app/pages/operation/add-prime-one/add-prime-one.component';
+import { AvanceComponent } from 'src/app/pages/operation/avance/avance.component';
+import { ListOperationComponent } from 'src/app/pages/operation/list-operation/list-operation.component';
+import { PenaliteComponent } from 'src/app/pages/operation/penalite/penalite.component';
+import { PrimeComponent } from 'src/app/pages/operation/prime/prime.component';
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -129,7 +138,7 @@ export const AdminLayoutRoutes: Routes = [
     component: PointagesComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "add-p", component: AddPComponent },
+      { path: "add-p/:id", component: AddPComponent },
       { path: "update-p/:id", component: UpdatePComponent },
       { path: "list-p", component: ListePComponent },
     ],
@@ -141,7 +150,7 @@ export const AdminLayoutRoutes: Routes = [
     children: [
       { path: "add-c", component: AddCComponent },
       { path: "liste-c", component: ListeCComponent },
-      { path: "update-c", component: UpdateCComponent },
+      { path: "update-c/:id", component: UpdateCComponent },
     ],
   },
   { path: "pause", component: PauseComponent, canActivate: [AuthGuard] },
@@ -149,6 +158,16 @@ export const AdminLayoutRoutes: Routes = [
     path: "operation",
     component: OperationComponent,
     canActivate: [AuthGuard],
+    children: [
+      { path: "add-penalite-all", component:AddPenaliteAllComponent  },
+      { path: "add-penalite-one/:id", component: AddPenaliteOneComponent },
+      { path: "add-prime-one/:id", component: AddPrimeOneComponent },
+      { path: "add-prime-all", component: AddPrimeAllComponent  },
+      { path: "avance", component: AvanceComponent },
+      { path: "list-operation", component: ListOperationComponent  },
+      { path: "penalite", component: PenaliteComponent },
+      { path: "prime", component: PrimeComponent },
+    ],
   },
   {
     path: "demmandeconge",
@@ -206,5 +225,9 @@ export const AdminLayoutRoutes: Routes = [
     ],
   },
   {path:"fichedepie",component:FichedePaieComponent, canActivate:[AuthGuard]},
-  {path:"modekiosque",component:ModeKiosqueComponent, canActivate:[AuthGuard]}
+  {path:"modekiosque",component:ModeKiosqueComponent, canActivate:[AuthGuard]},
+  {path:"demande-avance",component:DemandeAvanceComponent, canActivate:[AuthGuard]},
+  {path:"notreentreprise",component:NotreentrepriseComponent, canActivate:[AuthGuard]}
+
+
 ];

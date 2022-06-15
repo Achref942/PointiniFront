@@ -35,6 +35,9 @@ export class CongesService {
   demmandeconge (conges:Conges,id:number){
     return this.httpClient.post<Conges>(`${this.baseURL}/demmandeconge/${id}`, conges)
   }
+Confimerconge (id:number){
+    return this.httpClient.get<Conges>(`${this.baseURL}/confirmerConge/${id}`)
+  }
 
 
   getEventsDto(): Observable<EventsDto[]> {

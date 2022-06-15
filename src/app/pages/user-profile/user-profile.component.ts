@@ -1,3 +1,4 @@
+import { Entreprise } from './../../models/entreprise';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/users';
@@ -13,6 +14,8 @@ export class UserProfileComponent implements OnInit {
   x=localStorage.getItem("acteur");
   y=JSON.parse(this.x).photo;
   z=JSON.parse(this.x).username;
+  role=JSON.parse(this.x).role
+entreprise=JSON.parse(this.x).entreprise
   id = JSON.parse(this.x).id;
   user: User = new User();
 

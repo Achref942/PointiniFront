@@ -1,0 +1,43 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Veuillez saisir le montant de l'avance sur salaire que vous souhaitez:</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button type="button" class="btn btn-primary mt-4" type="submit">Valider</button>
+                                <button type="button" class="btn btn-primary mt-4" type="reset">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <h6 class="heading-small text-muted mb-4">Avance</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Date à laquelle vous souhitez recevoir l'avance :</label>
+                                        <input type="date" id="libelle" class="form-control form-control-alternative" placeholder="Date" [(ngModel)]="operation.dateoperation" name="dateoperation">
+                                        <label class="form-control-label" for="input-username">Message</label>
+                                        <input type="text" id="libelle" class="form-control form-control-alternative" placeholder="Message" [(ngModel)]="operation.libelle" name="libelle">
+                                        <label class="form-control-label" for="input-username">Montant</label>
+                                        <input type="number" id="libelle" class="form-control form-control-alternative" placeholder="Montant" [(ngModel)]="operation.montant" name="montant">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

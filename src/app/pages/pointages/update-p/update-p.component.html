@@ -1,1 +1,39 @@
-<p>update-p works!</p>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Update Pointage</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button class="btn btn-primary mt-4" type="submit">Update Pointage</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <h6 class="heading-small text-muted mb-4">Pointage</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+
+                                        <label class="form-control-label" for="input-username">arrive</label>
+                                        <input type="time" class="form-control form-control-alternative" id="arrive" [(ngModel)]="pointage.arrive" name="arrive">
+                                        <label class="form-control-label" for="input-username">sortir</label>
+                                        <input type="time" class="form-control form-control-alternative" id="sortir" [(ngModel)]="pointage.sortir" name="sortir">
+                                        <label class="form-control-label" for="input-username">date</label>
+                                        <input type="datetime" class="form-control form-control-alternative" id="date" [(ngModel)]="pointage.date" name="date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

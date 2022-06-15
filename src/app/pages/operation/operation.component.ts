@@ -1,5 +1,5 @@
-import { OperationService } from './../../Service/operation.service';
 import { Operation } from './../../models/oparation';
+import { OperationService } from './../../Service/operation.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,16 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./operation.component.scss']
 })
 export class OperationComponent implements OnInit {
-operations:Operation[];
-
+operation:any=[];
   constructor(private operationService:OperationService) { }
 
   ngOnInit(): void {
-    this.getAllOperation();
-  }
-  getAllOperation(){
-    this.operationService.GetAllOperations().subscribe(data=>{this.operations=data
-    });
+this.operationService.GetAllOperations().subscribe(data=>{
+  this.operation=data
+   console.log(this.operation)
+  });
   }
 
 }

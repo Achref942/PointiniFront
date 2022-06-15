@@ -38,8 +38,19 @@ this.entrepriseService.DesactiverEntreprise(id).subscribe(
   data=>{
     console.log(data)
     this.router.navigate(["/entreprise/liseentreprise"]);
+
   });
+  window.location.reload();
   }
+  Activerentreprise(id:any){
+    this.entrepriseService.ActiverEntreprise(id).subscribe(
+      data=>{
+        console.log(data)
+        this.router.navigate(["/entreprise/liseentreprise"]);
+
+      });
+      window.location.reload();
+      }
   Deleteentreprise(id:any){
     this.entrepriseService.DeleteEntreprise(id).subscribe(
       data=>{
@@ -47,6 +58,8 @@ this.entrepriseService.DesactiverEntreprise(id).subscribe(
         this.router.navigate(["/entreprise/addenreprise"]);
         this.router.navigate(["/entreprise/liseentreprise"]);
       });
-  }
+      window.location.reload();
+
+    }
 
 }

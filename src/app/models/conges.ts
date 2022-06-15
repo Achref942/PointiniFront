@@ -4,5 +4,6 @@ export class Conges {
   public datedeb: Date;
   public datefin: Date;
   public nbJour: number;
+  public  etat:any;
   public user: User;
 }

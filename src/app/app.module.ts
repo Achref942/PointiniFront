@@ -34,23 +34,27 @@ import { AddCComponent } from "./pages/conges/add-c/add-c.component";
 import { UpdateCComponent } from "./pages/conges/update-c/update-c.component";
 import { ListeCComponent } from "./pages/conges/liste-c/liste-c.component";
 
-import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { HomeLayoutComponent } from "./layouts/home-layout/home-layout.component";
 import { AddSAComponent } from "./pages/super-admin/add-sa/add-sa.component";
 import { ListSAComponent } from "./pages/super-admin/list-sa/list-sa.component";
 import { UpdateSAComponent } from "./pages/super-admin/update-sa/update-sa.component";
-import { AddadminComponent } from './pages/admin/addadmin/addadmin.component';
-import { ListadminComponent } from './pages/admin/listadmin/listadmin.component';
-import { UpdateadminComponent } from './pages/admin/updateadmin/updateadmin.component';
-import { AddrhComponent } from './pages/rh/addrh/addrh.component';
-import { UpdaterhComponent } from './pages/rh/updaterh/updaterh.component';
-import { ListrhComponent } from './pages/rh/listrh/listrh.component';
-import { AddemployeeComponent } from './pages/employee/addemployee/addemployee.component';
-import { UpdateemployeeComponent } from './pages/employee/updateemployee/updateemployee.component';
-import { ListemployeeComponent } from './pages/employee/listemployee/listemployee.component';
-import { FichedePaieComponent } from './pages/fichede-paie/fichede-paie.component';
-import { ModeKiosqueComponent } from './pages/mode-kiosque/mode-kiosque.component';
-
-
+import { AddadminComponent } from "./pages/admin/addadmin/addadmin.component";
+import { ListadminComponent } from "./pages/admin/listadmin/listadmin.component";
+import { UpdateadminComponent } from "./pages/admin/updateadmin/updateadmin.component";
+import { AddrhComponent } from "./pages/rh/addrh/addrh.component";
+import { UpdaterhComponent } from "./pages/rh/updaterh/updaterh.component";
+import { ListrhComponent } from "./pages/rh/listrh/listrh.component";
+import { AddemployeeComponent } from "./pages/employee/addemployee/addemployee.component";
+import { UpdateemployeeComponent } from "./pages/employee/updateemployee/updateemployee.component";
+import { ListemployeeComponent } from "./pages/employee/listemployee/listemployee.component";
+import { PrimeComponent } from "./pages/operation/prime/prime.component";
+import { AvanceComponent } from "./pages/operation/avance/avance.component";
+import { PenaliteComponent } from "./pages/operation/penalite/penalite.component";
+import { AddPrimeAllComponent } from "./pages/operation/add-prime-all/add-prime-all.component";
+import { AddPenaliteOneComponent } from "./pages/operation/add-penalite-one/add-penalite-one.component";
+import { AddPenaliteAllComponent } from "./pages/operation/add-penalite-all/add-penalite-all.component";
+import { ListOperationComponent } from "./pages/operation/list-operation/list-operation.component";
+import { AddPrimeOneComponent } from "./pages/operation/add-prime-one/add-prime-one.component";
 
 @NgModule({
   imports: [
@@ -63,29 +67,12 @@ import { ModeKiosqueComponent } from './pages/mode-kiosque/mode-kiosque.componen
     RouterModule,
     AppRoutingModule,
     //FormGroup
-
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
     HomeLayoutComponent,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // users
     UpdateusersComponent,
@@ -140,12 +127,15 @@ import { ModeKiosqueComponent } from './pages/mode-kiosque/mode-kiosque.componen
     UpdateemployeeComponent,
     ListemployeeComponent,
 
-
-
-
-
-
-
+    //operation
+    PrimeComponent,
+    AvanceComponent,
+    PenaliteComponent,
+    AddPrimeAllComponent,
+    AddPenaliteOneComponent,
+    AddPenaliteAllComponent,
+    ListOperationComponent,
+    AddPrimeOneComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

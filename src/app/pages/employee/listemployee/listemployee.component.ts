@@ -41,9 +41,13 @@ export class ListemployeeComponent implements OnInit {
   }
   desactiver(id:any){
     this.userService.desactiver(id).subscribe(data=>{
-      this.users=data });  }
+      this.users=data });
+    }
   updUser(id:any){
     this.router.navigate(["/employee/updateemployee",id]);
+  }
+  creerPointager(id:any){
+    this.router.navigate(["/pointages/add-p",id]);
   }
   ngOnInit(): void {
       if(this.y==null){
@@ -54,5 +58,12 @@ export class ListemployeeComponent implements OnInit {
   this.findUserByRoleEntreprise();
       }
   }
+  prime(id:any){
+    this.router.navigate(["/operation/add-prime-one",id]);
+  }
+  penalite(id:any){
+    this.router.navigate(["/operation/add-penalite-one",id]);
+  }
+
 
 }

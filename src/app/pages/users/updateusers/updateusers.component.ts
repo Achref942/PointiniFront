@@ -32,12 +32,12 @@ export class UpdateusersComponent implements OnInit {
 
   goToUserList(){
     this.router.navigate(['/users/listeusers']);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: "l'utilisateur est mis à jour",
-      showConfirmButton: false,
-      timer: 1500
-    })
+    // Swal.fire({
+    //   position: 'top-end',
+    //   icon: 'success',
+    //   title: "l'utilisateur est mis à jour",
+    //   showConfirmButton: false,
+    //   timer: 1500
+    // })
   }
 }

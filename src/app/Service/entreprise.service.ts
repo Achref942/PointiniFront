@@ -34,7 +34,10 @@ export class EntrepriseService {
   }
 
   DesactiverEntreprise(ide:number):Observable<Entreprise>{
-    return this.http.get<Entreprise>(`${this.baseURL}/desactiverEntreprise/${ide}`);
+    return this.http.get<Entreprise>(`${this.baseURL}/Desactive/${ide}`);
+  }
+  ActiverEntreprise(id: number): Observable<Entreprise> {
+    return this.http.get<Entreprise>(`${this.baseURL}/Active/${id}`);
   }
 
   DeleteEntreprise(ide:number):Observable<Entreprise>{

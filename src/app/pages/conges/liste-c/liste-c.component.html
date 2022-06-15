@@ -9,23 +9,19 @@
                             <h3 class="mb-0">Liste Conges</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <button routerLink="/conges/add-c" class="btn btn-info">Add Conge</button>
-
+                            <button routerLink="/conges/add-c" class="btn btn-info">Ajouter Conge</button>
                         </div>
-
                     </div>
                 </div>
                 <div class="">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">datedeb</th>
-                                <th scope="col">datefin</th>
-                                <th scope="col">nbJour</th>
+                                <th scope="col">date debut</th>
+                                <th scope="col">date fin</th>
                                 <th scope="col">user</th>
+                                <th scope="col">statut</th>
                                 <th scope="col"></th>
-
-
                             </tr>
                         </thead>
                         <tbody>
@@ -37,26 +33,23 @@
                                     {{c.datefin}}
                                 </td>
                                 <td>
-                                    {{c.nbJour}}
+                                    {{c.user.username}}
                                 </td>
                                 <td>
-                                    {{c.user}}
+                                    <span class="badge badge-success">{{c.etat}}</span>
                                 </td>
-
                                 <td class="text-right">
                                     <div ngbDropdown placement="bottom-right">
                                         <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="javascript:void(0)">Confurme</a>
+                                            <a class="dropdown-item" (click)="Confirmer(c.id)">Confirmer</a>
                                             <a class="dropdown-item" href="javascript:void(0)">Desactiver </a>
-                                            <a class="dropdown-item" href="javascript:void(0)">update </a>
-
+                                            <a class="dropdown-item" (click)="Update(c.id)">update </a>
                                         </div>
                                     </div>
                                 </td>
-
                             </tr>
                         </tbody>
                     </table>

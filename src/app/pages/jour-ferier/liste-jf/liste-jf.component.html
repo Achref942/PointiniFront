@@ -10,7 +10,7 @@
                             <h3 class="mb-0">Liste jour Ferier</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <button routerLink='/jourFerier/add-jf' class="btn btn-info">Create jourFerier</button>
+                            <button routerLink='/jourFerier/add-jf' class="btn btn-info">Ajouter jourFerier</button>
                         </div>
                     </div>
                 </div>
@@ -18,9 +18,9 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">libelle</th>
-                                <th scope="col">datedeb</th>
-                                <th scope="col">nbJour</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Date Debut</th>
+                                <th scope="col">DATE fIN</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                     {{jf.datedeb}}
                                 </td>
                                 <td>
-                                    {{jf.nbJour}}
+                                    {{jf.datefin}}
                                 </td>
                                 <td class="text-right">
                                     <div ngbDropdown placement="bottom-right">

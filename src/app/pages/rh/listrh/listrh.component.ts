@@ -53,5 +53,12 @@ export class ListrhComponent implements OnInit {
      }
   }
 
+  prime(id:any){
+    this.router.navigate(["/operation/add-prime-one",id]);
+  }
+  penalite(id:any){
+    this.router.navigate(["/operation/add-penalite-one",id]);
+  }
+
 }
 

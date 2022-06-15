@@ -28,25 +28,21 @@
                 <a class="nav-link" role="button" ngbDropdownToggle>
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
+              <img alt="Image placeholder" src="http://localhost:8080/user/files/{{z}}">
             </span>
                     </div>
                 </a>
                 <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
                     <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome!</h6>
+                        <h6 class="text-overflow m-0">Salut!</h6>
                     </div>
                     <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>My profile</span>
+                        <span>Mon Profile</span>
                     </a>
-                    <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>Settings</span>
-                    </a>
-                    <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+                    <a routerLinkActive="active" [routerLink]="['/calondar']" class="dropdown-item">
                         <i class="ni ni-calendar-grid-58"></i>
-                        <span>Activity</span>
+                        <span>Calendrier</span>
                     </a>
                     <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
                         <i class="ni ni-support-16"></i>
@@ -55,7 +51,7 @@
                     <div class="dropdown-divider"></div>
                     <a href="#!" class="dropdown-item">
                         <i class="ni ni-user-run"></i>
-                        <span>Logout</span>
+                        <span>Déconnexion</span>
                     </a>
                 </div>
             </li>
